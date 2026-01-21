@@ -141,14 +141,10 @@ h2 {
 
 .about-image {
     width: 100%;
-    aspect-ratio: 1;
-    background: var(--border);
+    max-height: 280px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-size: 0.9rem;
+    object-fit: cover;
+    object-position: top;
 }
 
 .about-text p {
@@ -188,12 +184,23 @@ h2 {
 .about .about-content {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    align-items: stretch;
+}
+
+.about .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.about .about-text p {
+    margin: 0;
 }
 
 .journey {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .journey-item {
