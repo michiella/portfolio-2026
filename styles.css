@@ -1,11 +1,11 @@
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --text: #1f2937;
-    --text-light: #6b7280;
-    --bg: #ffffff;
-    --bg-alt: #f9fafb;
-    --border: #e5e7eb;
+    --text: #222;
+    --text-light: #555;
+    --bg: #fff;
+    --bg-alt: #f7f7f7;
+    --border: #e0e0e0;
+    --accent: #444;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * {
@@ -19,9 +19,11 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: var(--font);
     color: var(--text);
     line-height: 1.6;
+    background: var(--bg);
+    font-size: 16px;
 }
 
 nav {
@@ -29,81 +31,104 @@ nav {
     top: 0;
     width: 100%;
     background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
+    padding: 1.25rem 2rem;
     z-index: 100;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.nav-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+    text-decoration: none;
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 2.5rem;
     list-style: none;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
+    color: var(--text-light);
+    font-size: 0.9rem;
     transition: color 0.2s;
 }
 
 nav a:hover {
-    color: var(--primary);
+    color: var(--text);
 }
 
 section {
-    padding: 5rem 2rem;
-    max-width: 1000px;
+    padding: 6rem 2rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .hero {
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    padding-top: 4rem;
+    padding-top: 6rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero .title {
-    font-size: 1.5rem;
-    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.hero p {
+.hero .title {
     font-size: 1.1rem;
     color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero .title a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+}
+
+.hero .title a:hover {
+    text-decoration-color: var(--text);
+}
+
+.hero > p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 520px;
+    margin-bottom: 2rem;
 }
 
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: var(--primary);
-    color: white;
+    background: var(--text);
+    color: var(--bg);
     text-decoration: none;
+    font-size: 0.9rem;
     border-radius: 6px;
-    font-weight: 500;
     transition: background 0.2s;
 }
 
 .btn:hover {
-    background: var(--primary-dark);
+    background: var(--text-light);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    font-weight: 600;
     margin-bottom: 2rem;
-    text-align: center;
 }
 
 .about {
@@ -114,18 +139,19 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
-    align-items: center;
+    align-items: start;
 }
 
 .about-image {
     width: 100%;
     aspect-ratio: 1;
     background: var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-light);
+    font-size: 0.9rem;
 }
 
 .about-text p {
@@ -141,58 +167,62 @@ h2 {
 }
 
 .skill {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.9rem;
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-light);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .project-card {
+    background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: box-shadow 0.2s;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .project-image {
-    height: 200px;
+    height: 180px;
     background: var(--bg-alt);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-light);
+    font-size: 0.9rem;
 }
 
 .project-info {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .project-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .project-info p {
     color: var(--text-light);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
 .project-link {
-    color: var(--primary);
+    color: var(--text);
     text-decoration: none;
-    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .project-link:hover {
@@ -200,22 +230,19 @@ h2 {
 }
 
 .contact {
-    background: var(--bg-alt);
     text-align: center;
+    background: var(--bg-alt);
 }
 
 .contact p {
     color: var(--text-light);
     margin-bottom: 2rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .contact-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -225,19 +252,21 @@ h2 {
     padding: 0.75rem 1.5rem;
     border: 1px solid var(--border);
     border-radius: 6px;
-    transition: border-color 0.2s, color 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.2s;
 }
 
 .contact-links a:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
 }
 
 footer {
     text-align: center;
     padding: 2rem;
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
@@ -245,13 +274,13 @@ footer {
         font-size: 2rem;
     }
 
-    .hero .title {
-        font-size: 1.2rem;
+    h2 {
+        font-size: 1.5rem;
     }
 
     .about-content {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 2rem;
     }
 
     .about-image {
@@ -264,7 +293,10 @@ footer {
     }
 
     nav ul {
-        gap: 1rem;
-        font-size: 0.9rem;
+        gap: 1.5rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
     }
 }
