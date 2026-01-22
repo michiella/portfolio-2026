@@ -8,6 +8,15 @@
     --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+body.dark-mode {
+    --text: #e5e5e5;
+    --text-light: #a0a0a0;
+    --bg: #121212;
+    --bg-alt: #1e1e1e;
+    --border: #333;
+    --accent: #bbb;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +33,7 @@ body {
     line-height: 1.6;
     background: var(--bg);
     font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav {
@@ -63,6 +73,21 @@ nav a {
 
 nav a:hover {
     color: var(--text);
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    transition: border-color 0.2s;
+}
+
+.theme-toggle:hover {
+    border-color: var(--text);
 }
 
 section {
