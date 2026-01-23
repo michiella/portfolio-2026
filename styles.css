@@ -301,7 +301,7 @@ h2 {
 
 /* Skills section */
 .skills {
-    background: var(--bg-alt);
+    background: var(--bg);
 }
 
 .skills-categories {
@@ -413,7 +413,7 @@ h2 {
 
 .contact {
     text-align: center;
-    background: var(--bg);
+    background: var(--bg-alt);
 }
 
 .contact p {
